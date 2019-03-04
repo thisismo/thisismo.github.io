@@ -14,25 +14,12 @@ body {
   height: 100vh;
 }
 
-@media only screen and (min-width: 500px)  {
-  .center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    min-width: 500px;
-    text-align: center;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-  }
-}
 .center {
   position: absolute;
   left: 50%;
   top: 50%;
   min-width: 300px;
+  min-height: 300px;
   text-align: center;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);

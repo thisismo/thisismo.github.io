@@ -14,13 +14,17 @@ body {
   height: 100vh;
 }
 
-.center { /* THANK YOU! HOW IS THE STREAM QUALITY BTW? I GUESS I COULD STILL CRANK IT UP A LITTLE */
+.center {
   position: absolute;
   left: 50%;
   top: 50%;
   min-width: 250px;
   text-align: center;
   transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
 
 .fullwidth {

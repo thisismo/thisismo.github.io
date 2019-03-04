@@ -14,6 +14,26 @@ body {
   height: 100vh;
 }
 
+/* Portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .center {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 100vw;
+      text-align: center;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+    }
+}
+
 .center {
   position: absolute;
   left: 50%;

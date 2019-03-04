@@ -1,8 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  position: fixed;
   font-family: 'Open Sans';
   background: #ffa500;
   color: #000;
@@ -11,7 +9,6 @@ body {
 html, body {
   min-width: 100%;
   min-height: 100%;
-  overflow: hidden;
 }
 
 .tab {

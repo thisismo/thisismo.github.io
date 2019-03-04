@@ -8,6 +8,11 @@ var pushUps = [];
 var timeoutFinished = null;
 var finished = false;
 
+window.onresize = function() {
+    document.body.height = window.innerHeight;
+}
+window.onresize(); // called to initially set the height.
+
 function reset(){
   switchView(0);
   pushUps = [];

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <title>PushUpStats</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body onload='ontouchmove()="return(function(event) { event.preventDefault(); event.stopPropagation(); return(false); } );"'>
+    <div class="tab" style="display:block;"> <!-- Start Screen -->
+      <div class="center">
+        <h1>Push Up Tracker</h1>
+        <input type="button" class="fullwidth" value="Start Session" onclick="switchView(1);">
+        <input type="button" class="fullwidth" value="View Stats" onclick="switchView(3);">
+      </div>
+    </div>
+    <div class="tab"> <!-- Session Screen -->
+      <div class="center">
+        <p style="font-weight: 700;">Current push ups:</p>
+        <span id="spanTotal">0</span>
+        <p id="descLeft">Push ups left to beat:</p>
+        <span id="spanLeft">25</span>
+      </div>
+    </div>
+    <div class="tab"> <!-- Session Stats Screen -->
+      <div class="center">
+        <h1>Well done!</h1>
+        <input type="button" id="submit" class="fullwidth" value="Submit Session" onclick="switchView(0);">
+      </div>
+    </div>
+    <div class="tab"> <!-- Stats Screen -->
+    </div>
+    <div class="tab">
+      <div class="center">
+        <h1>Sorry, but this this web application only works on touch devices!</h1>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>

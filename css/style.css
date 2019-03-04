@@ -23,6 +23,7 @@ body, html {
   position: absolute;
   left: 50%;
   top: 50%;
+  width: 100%;
   text-align: center;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -33,6 +34,7 @@ body, html {
 
 p {
   margin: 0px;
+  font-size: 1.5em;
 }
 
 input[type=button] {
@@ -42,6 +44,9 @@ input[type=button] {
   border-radius: 5px;
   border: solid 2px #000;
   margin-bottom: 10px;
+  font-size: 1.5em;
+  min-width: 250px;
+  width: 33%;
 }
 
 input[type=button]:focus {outline:0;}
@@ -51,12 +56,17 @@ input[type=button]:hover {
   color: #ffa500;
 }
 
+h1 {
+  font-size: 2.5em;
+  font-weight: 800;
+}
+
 #spanTotal {
-  font-size: 3em;
+  font-size: 5em;
   font-weight: 900;
 }
 
 #spanLeft {
-  font-size: 2em;
+  font-size: 3em;
   font-weight: 500;
 }

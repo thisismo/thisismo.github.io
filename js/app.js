@@ -58,15 +58,14 @@ tabs[1].addEventListener("click", function(){
   timeoutFinished = setTimeout(function(){
     finished = true;
     switchView(2);
-  }, 3000);
+  }, 4000);
 
   if(pushUps.length < pushUpsLeft){
     spanLeft.innerHTML = pushUpsLeft - pushUps.length;
   }else{
-    document.getElementById("descLeft").innerHTML = "";
-    spanLeft.innerHTML = "You beat your old Record. Keep on going!";
-    setTimeout(function(){
+    document.getElementById("descLeft").innerHTML = "You beat your old Record. Keep on going!";
       spanLeft.style.display = "none";
+    setTimeout(function(){
       document.getElementById("descLeft").style.display = "none";
     }, 2000);
   }

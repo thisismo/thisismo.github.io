@@ -50,9 +50,8 @@ input[type=button] {
   width: 33%;
 }
 
-input[type=button]:focus {outline:0;}
-
-input[type=button]:hover {
+input[type=button]:focus {
+  outline:0;
   background: #000;
   color: #ffa500;
 }

@@ -14,6 +14,7 @@
         <input type="button" class="fullwidth" value="Start Session" onclick="switchView(1);"><br>
         <input type="button" class="fullwidth" value="View Stats" onclick="switchView(3);">
       </div>
+      <p id="reset" onclick="resetStats();">reset stats</p>
     </div>
     <div class="tab"> <!-- Session Screen -->
       <div class="center">
@@ -26,7 +27,7 @@
     <div class="tab"> <!-- Session Stats Screen -->
       <div class="center">
         <h1>Well done!</h1>
-        <input type="button" id="submit" class="fullwidth" value="Submit Session" onclick="switchView(0);">
+        <input type="button" id="submit" class="fullwidth" value="Save Session" onclick="switchView(0);">
       </div>
     </div>
     <div class="tab"> <!-- Stats Screen -->

@@ -58,7 +58,7 @@ tabs[1].addEventListener("click", function(){
   timeoutFinished = setTimeout(function(){
     finished = true;
     switchView(2);
-  }, 4000);
+  }, 5000);
 
   if(pushUps.length < pushUpsLeft){
     spanLeft.innerHTML = pushUpsLeft - pushUps.length;
@@ -96,4 +96,18 @@ function is_touch_device() {
   } catch (e) {
     return false;
   }
+}
+
+function resetStats(){
+  var c = confirm("Are you sure you want to reset your statistics?");
+  if(!c) return;
+  if(!localStorage.getItem("oldStats") && localStorage.getItem("stats")){
+    localStorage.setItem("oldStats", JSON.stringify([JSON.parse(localStorage.getItem("stats"))]));
+  }else{
+    var oldStats = JSON.parse(localStorage.getItem("oldStats"));
+    oldStats.push(JSON.parse(localStorage.getItem("stats")));
+    localStorage.setItem("oldStats", JSON.stringify(oldStats));
+  }
+  localStorage.removeItem("stats");
+  reset();
 }

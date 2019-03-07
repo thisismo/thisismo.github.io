@@ -48,7 +48,7 @@ if(!localStorage.getItem('uuid')) {
   }));
 }
 
-tabs[1].addEventListener("click", function(){
+tabs[1].addEventListener("touchstart", function(){
   if(finished) return;
 
   pushUps.push(new Date().getTime());

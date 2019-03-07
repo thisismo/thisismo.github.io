@@ -61,6 +61,14 @@ h1 {
   font-weight: 800;
 }
 
+#insession {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
 #spanTotal {
   font-size: 5em;
   font-weight: 900;

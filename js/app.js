@@ -26,9 +26,10 @@ function reset(){
 }
 
 if (window.safari) {
-    history.pushState(null, null, location.href);
+  alert("hi");
+    window.history.pushState(null, null, location.href);
     window.onpopstate = function(event) {
-        history.go(1);
+        window.history.go(1);
     };
 }
 

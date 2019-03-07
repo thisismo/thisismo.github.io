@@ -12,7 +12,7 @@
       <div class="center">
         <h1>Push Up Tracker</h1>
         <input type="button" class="fullwidth" value="Start Session" onclick="switchView(1);"><br>
-        <input type="button" class="fullwidth" value="View Stats" onclick="switchView(3);">
+        <input type="button" class="fullwidth" value="View Stats" onclick="updateStats();">
       </div>
       <p id="reset" onclick="resetStats();">reset stats</p>
     </div>
@@ -30,18 +30,18 @@
         <div id="stats">
           <p>You improved by <span id="delta">0</span> push ups!</p>
         </div>
-        <input type="button" id="submit" class="fullwidth" value="Save Session" onclick="updateStats();">
+        <input type="button" id="submit" class="fullwidth" value="Save Session" onclick="switchView(0);">
       </div>
     </div>
     <div class="tab"> <!-- Stats Screen -->
-      <div class="center">
+      <div class="center stats">
         <p style="text-align:left;">Total Sessions:
         <span id="totalSessions" style="float:right;">0</span>
         </p>
         <p style="text-align:left;">Total Push Ups:
         <span id="totalPushups" style="float:right;">0</span>
         </p>
-        <p style="text-align:left;">Average Improvment:
+        <p style="text-align:left;">Average Improvement:
         <span id="avgImprovement" style="float:right;">0</span>
         </p>
       </div>

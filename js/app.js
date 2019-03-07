@@ -111,12 +111,14 @@ function updateStats(){
   for(var i = 0; i < stats.length; i++){
     totalPushups += stats[i].pushups;
     if(i == 0) continue;
-    averageImprovement += stats[i].pushUps - stats[i - 1];
+    averageImprovement += stats[i].pushups - stats[i - 1].pushups;
   }
-  averageImprovement /= totalSessions;
+  console.log("1: " + averageImprovement);
+  averageImprovement /= (totalSessions - 1);
+  console.log("2: " + averageImprovement);
   document.getElementById("totalSessions").innerHTML = totalSessions;
   document.getElementById("totalPushups").innerHTML = totalPushups;
-  document.getElementById("avgImprovement").innerHTML = averageImprovement;
+  document.getElementById("avgImprovement").innerHTML = averageImprovement.toFixed(2);
   switchView(3);
 }
 

@@ -25,12 +25,17 @@ function reset(){
   spanTotal.innerHTML = pushUps.length;
 }
 
-if (window.safari) {
-  alert("hi");
-    window.history.pushState(null, null, location.href);
-    window.onpopstate = function(event) {
-        window.history.go(1);
-    };
+function preventZoom(e) {
+  var t2 = e.timeStamp;
+  var t1 = e.currentTarget.dataset.lastTouch || t2;
+  var dt = t2 - t1;
+  var fingers = e.touches.length;
+  e.currentTarget.dataset.lastTouch = t2;
+
+  if (!dt || dt > 500 || fingers > 1) return; // not double-tap
+
+  e.preventDefault();
+  e.target.click();
 }
 
 reset();
@@ -60,6 +65,8 @@ if(!localStorage.getItem('uuid')) {
 document.addEventListener('gesturestart', function (e) {
     e.preventDefault();
 });
+
+document.addEventListener("touchstart", preventZoom);
 
 tabs[1].addEventListener("touchstart", function(){
   if(finished) return;

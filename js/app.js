@@ -48,6 +48,10 @@ if(!localStorage.getItem('uuid')) {
   }));
 }
 
+document.addEventListener('gesturestart', function (e) {
+    e.preventDefault();
+});
+
 tabs[1].addEventListener("touchstart", function(){
   if(finished) return;
 

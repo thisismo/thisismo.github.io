@@ -77,6 +77,7 @@ tabs[1].addEventListener("touchstart", function(){
   window.clearTimeout(timeoutFinished);
   timeoutFinished = setTimeout(function(){
     finished = true;
+    document.getElementById("delta").innerHTML = (pushUps.length - pushUpsLeft);
     switchView(2);
   }, 4000);
 

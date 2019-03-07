@@ -53,7 +53,7 @@ input[type=button] {
   appearance: none;
 }
 
-input[type=button]:focus {
+input[type=button]:focus, input[type=button]:hover {
   outline:0;
   background: #000;
   color: #ffa500;

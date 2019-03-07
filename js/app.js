@@ -103,6 +103,23 @@ document.getElementById("submit").addEventListener("click", function(){
   reset();
 })
 
+function updateStats(){
+  var stats = JSON.parse(localStorage.getItem("stats"));
+  var totalSessions = stats.length;
+  var totalPushups = 0;
+  var averageImprovement = 0;
+  for(var i = 0; i < stats.length; i++){
+    totalPushups += stats[i].pushups;
+    if(i == 0) continue;
+    averageImprovement += stats[i].pushUps - stats[i - 1];
+  }
+  averageImprovement /= totalSessions;
+  document.getElementById("totalSessions").innerHTML = totalSessions;
+  document.getElementById("totalPushups").innerHTML = totalPushups;
+  document.getElementById("avgImprovement").innerHTML = averageImprovement;
+  switchView(3);
+}
+
 //Switching Views
 function switchView(n){
   current.style.display = "none";

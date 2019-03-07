@@ -53,13 +53,16 @@ input[type=button] {
   padding: 5px;
   border-radius: 5px;
   border: solid 2px #000;
-  margin-bottom: 10px;
   font-size: 1.5em;
   min-width: 250px;
   width: 33%;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+input[type=button]:not(:first-child) {
+  margin-top: 10px;
 }
 
 input[type=button]:focus, input[type=button]:hover {

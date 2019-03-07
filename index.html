@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body onload='ontouchmove()="return(function(event) { event.preventDefault(); event.stopPropagation(); return(false); } );"'>
-    <div class="tab" style="display:block;"> <!-- Start Screen -->
-      <div class="center">
+    <div class="tab" style="display:block;" onclick="void(0);"> <!-- Start Screen -->
+      <div class="center" onclick="void(0);">
         <h1>Push Up Tracker</h1>
         <input type="button" class="fullwidth" value="Start Session" onclick="switchView(1);"><br>
         <input type="button" class="fullwidth" value="View Stats" onclick="switchView(3);">

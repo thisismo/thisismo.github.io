@@ -20,8 +20,16 @@ function reset(){
   finished = false;
   getPushupGoal();
   document.getElementById("descLeft").innerHTML = "Push ups left to beat:";
+  document.getElementById("descLeft").style.display = "block";
   spanLeft.style.display = "block";
   spanTotal.innerHTML = pushUps.length;
+}
+
+if (window.safari) {
+    history.pushState(null, null, location.href);
+    window.onpopstate = function(event) {
+        history.go(1);
+    };
 }
 
 reset();
@@ -62,13 +70,13 @@ tabs[1].addEventListener("touchstart", function(){
   timeoutFinished = setTimeout(function(){
     finished = true;
     switchView(2);
-  }, 5000);
+  }, 4000);
 
   if(pushUps.length < pushUpsLeft){
     spanLeft.innerHTML = pushUpsLeft - pushUps.length;
   }else{
     document.getElementById("descLeft").innerHTML = "You beat your old Record. Keep on going!";
-      spanLeft.style.display = "none";
+    spanLeft.style.display = "none";
     setTimeout(function(){
       document.getElementById("descLeft").style.display = "none";
     }, 2000);

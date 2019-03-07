@@ -1,3 +1,7 @@
+* {
+  touch-action: none;
+}
+
 body {
   font-family: 'Open Sans';
   background: #ffa500;

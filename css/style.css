@@ -52,6 +52,9 @@ input[type=button] {
   font-size: 1.5em;
   min-width: 250px;
   width: 33%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 input[type=button]:focus {

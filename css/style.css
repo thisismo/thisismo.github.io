@@ -61,7 +61,7 @@ h1 {
   font-weight: 800;
 }
 
-#insession {
+.unselectable, h1 {
   user-select: none;
   -moz-user-select: none;
   -khtml-user-select: none;

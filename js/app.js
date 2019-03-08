@@ -105,6 +105,7 @@ document.getElementById("submit").addEventListener("click", function(){
 
 function updateStats(){
   var stats = JSON.parse(localStorage.getItem("stats"));
+  if(!stats) alert("Please do at least one Session first");
   var totalSessions = stats.length;
   var totalPushups = 0;
   var averageImprovement = 0;

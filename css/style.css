@@ -47,10 +47,6 @@ p {
   font-size: 1.5em;
 }
 
-#stats {
-  margin-bottom: 10px;
-}
-
 .stats {
   position: absolute;
   left: 50%;
@@ -76,6 +72,10 @@ input[type=button] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+.ma {
+  margin-top: 20px;
 }
 
 input[type=button]:focus, input[type=button]:hover {

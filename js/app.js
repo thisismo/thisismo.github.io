@@ -78,6 +78,7 @@ tabs[1].addEventListener("touchstart", function(){
   timeoutFinished = setTimeout(function(){
     finished = true;
     document.getElementById("delta").innerHTML = (pushUps.length - pushUpsLeft);
+    saveSession();
     switchView(2);
   }, 4000);
 
@@ -92,7 +93,8 @@ tabs[1].addEventListener("touchstart", function(){
   }
 });
 
-document.getElementById("submit").addEventListener("click", function(){
+function saveSession(){
+  if(pushUps.length == 0) return;
   if(!localStorage.getItem("stats")){
     localStorage.setItem("stats", JSON.stringify([{date: new Date().getTime(), pushups: pushUps.length, timestamps: pushUps}]));
   }else{
@@ -100,8 +102,7 @@ document.getElementById("submit").addEventListener("click", function(){
     statsBefore.push({date: new Date().getTime(), pushups: pushUps.length, timestamps: pushUps});
     localStorage.setItem("stats", JSON.stringify(statsBefore));
   }
-  reset();
-})
+}
 
 function updateStats(){
   var stats = JSON.parse(localStorage.getItem("stats"));
@@ -109,6 +110,7 @@ function updateStats(){
   var totalSessions = stats.length;
   var totalPushups = 0;
   var averageImprovement = 0;
+  var lastSession = new Date(stats[stats.length - 1].date);
   for(var i = 0; i < stats.length; i++){
     totalPushups += stats[i].pushups;
     if(i == 0) continue;
@@ -117,13 +119,13 @@ function updateStats(){
   console.log("1: " + averageImprovement);
   averageImprovement /= (totalSessions - 1);
   console.log("2: " + averageImprovement);
+  document.getElementById("lastSession").innerHTML = lastSession.toLocaleDateString();
   document.getElementById("totalSessions").innerHTML = totalSessions;
   document.getElementById("totalPushups").innerHTML = totalPushups;
   document.getElementById("avgImprovement").innerHTML = averageImprovement.toFixed(2);
   switchView(3);
 }
 
-//Switching Views
 function switchView(n){
   current.style.display = "none";
   current = tabs[n];

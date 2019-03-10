@@ -27,14 +27,17 @@
     <div class="tab"> <!-- Session Stats Screen -->
       <div class="center">
         <h1>Well done!</h1>
-        <div id="stats">
+        <div>
           <p>You improved by <span id="delta">0</span> push ups!</p>
+          <input type="button" id="submit" class="fullwidth ma" value="Save Session" onclick="reset();">
         </div>
-        <input type="button" id="submit" class="fullwidth" value="Save Session" onclick="switchView(0);">
       </div>
     </div>
     <div class="tab"> <!-- Stats Screen -->
       <div class="center stats">
+        <p style="text-align:left;">Last Session:
+        <span id="lastSession" style="float:right;"></span>
+        </p>
         <p style="text-align:left;">Total Sessions:
         <span id="totalSessions" style="float:right;">0</span>
         </p>
@@ -44,6 +47,7 @@
         <p style="text-align:left;">Average Improvement:
         <span id="avgImprovement" style="float:right;">0</span>
         </p>
+        <input type="button" class="fullwidth ma" value="Go Back" onclick="switchView(0);">
       </div>
     </div>
     <div class="tab">
